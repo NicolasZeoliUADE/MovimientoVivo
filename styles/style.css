@@ -358,3 +358,47 @@ input, textarea {
   height: auto;
   display: inline-block;
 }
+
+.redes-sociales-iconos {
+  display: flex;          
+  justify-content: center;  
+  align-items: center;     
+  gap: 25px;              
+  margin-top: 1rem;       
+}
+
+.redes-sociales-iconos img {
+  width: 80px; 
+  height: auto;
+}
+
+@media (min-width: 1000px) {
+  .redes-sociales-iconos img {
+    width: 40px;
+  }
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.miembro-equipo {
+  border: 1px solid #e0e0e0;
+  padding: 1.5rem;         
+  border-radius: 8px;        
+  background-color: #fff;     
+}
+.miembro-equipo h4 {
+  margin-bottom: 0.25rem;
+  margin-top: 0; 
+}
+
+.miembro-equipo .rol {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0;
+}
