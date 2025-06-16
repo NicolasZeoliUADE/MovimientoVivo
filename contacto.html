@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Centro Cultural "Movimiento Vivo"</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="layout">
+  <header class="encabezado">
+    <nav>
+      <img src="img\logo_centro_cultural.svg" alt="Logo" class="logo">
+      <button class="burger" aria-label="Menu">
+         <span></span>
+         <span></span>
+         <span></span>
+       </button>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="actividades.html">Actividades</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html" class="activo">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main class="formulario">
+<div class="form-container">
+  <div class="form-wrapper">
+    <div class="form-card">
+      <h2 class="form-title">Contacto</h2>
+      <h3 class="form-subtitle">¡Suscribite a nuestro newsletter y enterate de las novedades antes que nadie!</h3>
+      <hr class="form-divider">
+      
+      <form class="custom-form" novalidate>
+        <div class="form-group">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+          <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+          <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="asunto" class="form-label">Asunto</label>
+          <input type="text" id="asunto" name="asunto" placeholder="Asunto" required>
+          <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje" class="form-label">Sugerencias</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+          <div class="error-message"></div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="submit-button">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <div id="successToast" class="custom-toast">
+    <div class="toast-message" id="toastMessage"></div>
+  </div>
+
+<script src="styles\validacionesFormulario.js"></script>
+</main>
+
+  <footer>
+    <p>© 2025 – Grupo 3 – Curso: Diseño y Desarrollo Web (15130)<br>Profesora: Patricia Litovicius</p>
+  </footer>
+  </div>
+  <script src="styles\burger.js"></script>
+</body>
+</html>

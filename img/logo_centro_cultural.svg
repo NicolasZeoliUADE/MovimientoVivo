@@ -1,0 +1,181 @@
+<svg viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradientes vibrantes -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#45B7D1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#96CEB4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FECA57;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF9FF3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#45B7D1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Formas dinámicas en movimiento -->
+  <g transform="translate(10,20)">
+    <!-- Persona bailando/saltando -->
+    <g transform="translate(20,15)">
+      <!-- Cabeza -->
+      <circle cx="0" cy="0" r="6" fill="url(#grad1)">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          values="0,0; -1,-3; 1,-2; 0,0" 
+                          dur="1.5s" 
+                          repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Cuerpo -->
+      <ellipse cx="0" cy="15" rx="4" ry="10" fill="url(#grad2)">
+        <animateTransform attributeName="transform" 
+                          type="rotate" 
+                          values="0 0 15; -10 0 15; 10 0 15; 0 0 15" 
+                          dur="1.5s" 
+                          repeatCount="indefinite"/>
+      </ellipse>
+      
+      <!-- Brazo izquierdo -->
+      <line x1="-3" y1="10" x2="-8" y2="5" stroke="url(#grad3)" stroke-width="3" stroke-linecap="round">
+        <animateTransform attributeName="transform" 
+                          type="rotate" 
+                          values="0 -3 10; 45 -3 10; -30 -3 10; 0 -3 10" 
+                          dur="1.5s" 
+                          repeatCount="indefinite"/>
+      </line>
+      
+      <!-- Brazo derecho -->
+      <line x1="3" y1="10" x2="8" y2="2" stroke="url(#grad3)" stroke-width="3" stroke-linecap="round">
+        <animateTransform attributeName="transform" 
+                          type="rotate" 
+                          values="0 3 10; -45 3 10; 30 3 10; 0 3 10" 
+                          dur="1.5s" 
+                          repeatCount="indefinite"/>
+      </line>
+      
+      <!-- Pierna izquierda -->
+      <line x1="-2" y1="24" x2="-6" y2="35" stroke="url(#grad1)" stroke-width="3" stroke-linecap="round">
+        <animateTransform attributeName="transform" 
+                          type="rotate" 
+                          values="0 -2 24; 20 -2 24; -15 -2 24; 0 -2 24" 
+                          dur="1.5s" 
+                          repeatCount="indefinite"/>
+      </line>
+      
+      <!-- Pierna derecha -->
+      <line x1="2" y1="24" x2="6" y2="35" stroke="url(#grad1)" stroke-width="3" stroke-linecap="round">
+        <animateTransform attributeName="transform" 
+                          type="rotate" 
+                          values="0 2 24; -20 2 24; 15 2 24; 0 2 24" 
+                          dur="1.5s" 
+                          repeatCount="indefinite"/>
+      </line>
+      
+      <!-- Líneas de movimiento -->
+      <path d="M -10 8 Q -15 5, -12 2" stroke="#FECA57" stroke-width="2" fill="none" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 10 12 Q 15 8, 12 5" stroke="#FF9FF3" stroke-width="2" fill="none" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.8s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Formas geométricas bailando -->
+    <polygon points="55,20 65,35 55,50 45,35" fill="url(#grad2)" transform="rotate(45 55 35)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="0 55 35; 360 55 35" 
+                        dur="8s" 
+                        repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Rectángulo ondulante -->
+    <rect x="75" y="25" width="20" height="20" rx="5" fill="url(#grad3)" transform="rotate(30 85 35)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="0 85 35; 15 85 35; -15 85 35; 0 85 35" 
+                        dur="2s" 
+                        repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Partículas de energía -->
+    <circle cx="15" cy="15" r="3" fill="#FECA57" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="95" cy="20" r="2" fill="#FF9FF3" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="30" cy="60" r="2.5" fill="#96CEB4" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Ondas de sonido/música -->
+    <path d="M 105 35 Q 115 25, 125 35 Q 135 45, 145 35" stroke="#FF6B6B" stroke-width="3" fill="none" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 105 35 Q 118 20, 130 35 Q 142 50, 155 35" stroke="#4ECDC4" stroke-width="2" fill="none" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Texto dinámico -->
+  <g transform="translate(140,0)">
+    <text x="0" y="35" font-family="Impact, 'Anton', 'Bebas Neue', sans-serif" font-size="24" font-weight="900" fill="url(#textGrad)" letter-spacing="1px">
+      MOVIMIENTO
+      <animate attributeName="fill" 
+               values="url(#textGrad);#FF6B6B;#4ECDC4;#45B7D1;url(#textGrad)" 
+               dur="4s" 
+               repeatCount="indefinite"/>
+    </text>
+    <text x="0" y="55" font-family="Impact, 'Anton', 'Bebas Neue', sans-serif" font-size="20" font-weight="800" fill="#FF6B6B" letter-spacing="1px">
+      VIVO
+    </text>
+    
+    <!-- Tres estrellas arriba del texto en constante movimiento -->
+    <!-- Estrella 1 - Izquierda -->
+    <polygon points="15,8 17,14 23,14 18,18 20,24 15,20 10,24 12,18 7,14 13,14" 
+             fill="#FECA57" opacity="0.9">
+      <animateTransform attributeName="transform" 
+                        type="translate" 
+                        values="0,0; -3,-4; 2,-2; 0,0; 1,-3; -2,-1; 0,0" 
+                        dur="2.5s" 
+                        repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.4;0.9;0.6;0.9" dur="2.5s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Estrella 2 - Centro -->
+    <polygon points="40,5 42,11 48,11 43,15 45,21 40,17 35,21 37,15 32,11 38,11" 
+             fill="#FF9FF3" opacity="0.8">
+      <animateTransform attributeName="transform" 
+                        type="translate" 
+                        values="0,0; 3,-5; -2,-3; 0,0; -1,-4; 2,-2; 0,0" 
+                        dur="3s" 
+                        repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.3;0.8;0.5;0.8" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Estrella 3 - Derecha -->
+    <polygon points="65,10 67,16 73,16 68,20 70,26 65,22 60,26 62,20 57,16 63,16" 
+             fill="#4ECDC4" opacity="0.85">
+      <animateTransform attributeName="transform" 
+                        type="translate" 
+                        values="0,0; -2,-3; 3,-5; 0,0; 2,-2; -1,-4; 0,0" 
+                        dur="2.8s" 
+                        repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0.35;0.85;0.55;0.85" dur="2.8s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <!-- Efecto de "pulso" de fondo -->
+  <circle cx="140" cy="50" r="45" fill="none" stroke="#FF6B6B" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="45;55;45" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>
