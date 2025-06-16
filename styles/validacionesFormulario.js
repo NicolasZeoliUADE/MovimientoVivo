@@ -52,20 +52,29 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-if (isFormValid) {
-    const userName = document.getElementById('nombre').value.trim();
-    const toast = document.getElementById('successToast');
-    const toastMessage = document.getElementById('toastMessage');
-    
-    toastMessage.textContent = `¡${userName}, muchas gracias por suscribirte a nuestro newsletter!`;
-    toast.style.display = 'block';
-    
-    setTimeout(() => {
-        toast.style.display = 'none';
-    }, 7000);
-    
-    this.reset();
-}
+    if (isFormValid) {
+      const userName = document.getElementById('nombre').value.trim();
+      const toast = document.getElementById('successToast');
+      const toastMessage = document.getElementById('toastMessage');
+      
+      toastMessage.textContent = `¡${userName}, muchas gracias por suscribirte a nuestro newsletter!`;
+      toast.style.display = 'block';
+      
+      setTimeout(() => {
+          toast.style.display = 'none';
+      }, 7000);
+      
+      this.reset();
+    } else {
+      // PUNTO 4: foco automático al primer error
+      const firstError = document.querySelector('.error-message[style="display: block;"]');
+      if (firstError) {
+        const inputWithError = firstError.previousElementSibling;
+        if (inputWithError) {
+          inputWithError.focus();
+        }
+      }
+    }
   });
 
   function validateField(input, errorElement, constraint) {
@@ -80,9 +89,12 @@ if (isFormValid) {
       errorMessage = isValid ? '' : constraint.error;
     }
 
-  input.style.borderColor = isValid ? '#28a745' : '#dc3545';
-  errorElement.style.display = errorMessage ? 'block' : 'none';
-  errorElement.textContent = errorMessage;
-  return isValid;
+    input.style.borderColor = isValid ? '#28a745' : '#dc3545';
+    errorElement.style.display = errorMessage ? 'block' : 'none';
+    errorElement.textContent = errorMessage;
+    return isValid;
   }
+
+  // PUNTO 1: foco al cargar el formulario
+  document.getElementById('nombre').focus();
 });
