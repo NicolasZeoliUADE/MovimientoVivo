@@ -408,13 +408,12 @@ main.video {
 
 .cta-container {
   position: absolute;
-  top: 25%; /* altura deseada, ajustá si querés más arriba o abajo */
+  top: 80px; /* distancia desde el top, podés ajustar a gusto */
   left: 50%;
-  transform: translateX(-50%); /* solo centrado horizontal */
+  transform: translateX(-50%);
   z-index: 10;
   text-align: center;
 }
-
 
 .boton-cta {
   display: inline-block;
