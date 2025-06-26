@@ -429,20 +429,30 @@ input, textarea {
   z-index: 2;
 }
 
-.boton-destacado {
-  background-color: #000000;
+.boton-cta {
+  display: inline-block;
+  background-color: #d6334c;
   color: white;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   border-radius: 40px;
+  border: none;
   text-decoration: none;
-  display: inline-block;
+  text-align: center;
+  min-width: 300px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.boton-destacado:hover {
-  background-color: #333333;
+.boton-cta:hover {
+  background-color: #b02a3d;
   transform: scale(1.05);
+}
+
+.cta-container {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
