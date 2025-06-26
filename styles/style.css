@@ -408,11 +408,10 @@ main.video {
 
 .cta-container {
   position: absolute;
-  top: 25%; /* Ajustá este valor según cómo lo quieras ver */
+  top: 25%; /
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  text-align: center;
 }
 
 .boton-cta {
