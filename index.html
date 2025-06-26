@@ -9,42 +9,43 @@
 </head>
 <body>
   <div class="layout">
-  <header class="encabezado">
-    <nav>
-      <img src="img\logo_centro_cultural.svg" alt="Logo" class="logo">
-      <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPrincipal">
+    <header class="encabezado">
+      <nav>
+        <img src="img/logo_centro_cultural.svg" alt="Logo" class="logo">
+        <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPrincipal">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav">
+          <li><a href="index.html" class="activo">Home</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="actividades.html">Actividades</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="comunidad.html">Comunidad</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
 
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav">
-        <li><a href="index.html" class="activo">Home</a></li>
-        <li><a href="eventos.html">Eventos</a></li>
-        <li><a href="actividades.html">Actividades</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="comunidad.html">Comunidad</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <main class="video">
+      <video autoplay muted loop playsinline class="cultural-video">
+        <source src="img/slideVideo.mp4" type="video/mp4">
+      </video>
+      <div class="cta-container">
+        <a href="tickets.html" class="boton-cta">Comprá tus entradas</a>
+      </div>
+    </main>
 
-  <main class="video">
-  <video autoplay muted loop playsinline class="cultural-video">
-    <source src="img\slideVideo.mp4" type="video/mp4">
-  </video>
-    <a href="tickets.html" class="boton-principal">Ver calendario y comprar entradas</a>
-
-  </main>
-
-  <footer>
-    <p> Martin Moneta - Nicolas Zeoli - Sasha Ejarque - Milton Sosa - Emiliano Pascazi</p>
-    <a href="https://martinmoneta.github.io/TPF_V2/index.html" target="_blank">Sitio grupal</a>
-    <p>© 2025 – Grupo 3 – Curso: Diseño y Desarrollo Web (15130)<br>Profesora: Patricia Litovicius</p>
-    <img src="logo.png" alt="Logo uade" width="200" height="auto">
-  </footer>
+    <footer>
+      <p>Martin Moneta - Nicolas Zeoli - Sasha Ejarque - Milton Sosa - Emiliano Pascazi</p>
+      <a href="https://martinmoneta.github.io/TPF_V2/index.html" target="_blank">Sitio grupal</a>
+      <p>© 2025 – Grupo 3 – Curso: Diseño y Desarrollo Web (15130)<br>Profesora: Patricia Litovicius</p>
+      <img src="logo.png" alt="Logo uade" width="200" height="auto">
+    </footer>
   </div>
-  <script src="styles\burger.js"></script>
+
+  <script src="styles/burger.js"></script>
 </body>
 </html>
