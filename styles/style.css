@@ -408,7 +408,7 @@ main.video {
 
 .cta-container {
   position: absolute;
-  top: 80px; /* distancia desde el top, podés ajustar a gusto */
+  bottom: 50px;        /* En lugar de top */
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
