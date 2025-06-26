@@ -411,20 +411,30 @@ input, textarea {
   text-align: center;
 }
 
-.boton-cta {
-  display: inline-block;
-  background-color: #ff6f61;
+.cta-destacado {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.boton-destacado {
+  background-color: #000000;
   color: white;
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  border-radius: 12px;
-  text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 40px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.boton-cta:hover {
-  background-color: #ff4c3b;
+.boton-destacado:hover {
+  background-color: #333333;
   transform: scale(1.05);
+}
 }
