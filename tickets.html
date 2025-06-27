@@ -55,17 +55,6 @@
     </footer>
   </div>
 
-  <!-- MODAL - ESTO ES LO QUE TE FALTABA AGREGAR -->
-  <div id="purchaseModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">¡Gracias por tu compra!</div>
-      <div class="modal-body">
-        Recibirás un correo con los detalles del evento.
-      </div>
-      <button class="modal-button" onclick="closeModal()">Aceptar</button>
-    </div>
-  </div>
-
   <script src="styles/burger.js"></script>
   <script>
     const form = document.getElementById('form-tickets');
@@ -79,24 +68,74 @@
     
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      showPurchaseModal();
+      showPurchaseNotification();
       form.reset();
       totalDisplay.textContent = '$0';
     });
     
-    function showPurchaseModal() {
-      document.getElementById('purchaseModal').style.display = 'block';
-    }
-    
-    function closeModal() {
-      document.getElementById('purchaseModal').style.display = 'none';
-    }
-    
-    window.onclick = function(event) {
-      const modal = document.getElementById('purchaseModal');
-      if (event.target === modal) {
-        modal.style.display = 'none';
+    function showPurchaseNotification() {
+      // Crear notificación simple
+      const notification = document.createElement('div');
+      notification.innerHTML = `
+        <div style="
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background-color: #4CAF50;
+          color: white;
+          padding: 15px 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+          z-index: 1000;
+          font-family: 'Montserrat', Arial, sans-serif;
+          max-width: 300px;
+          font-size: 14px;
+          line-height: 1.4;
+          animation: slideIn 0.3s ease-out;
+        ">
+          <strong style="font-size: 16px;">¡Gracias por tu compra!</strong><br>
+          Recibirás un correo con los detalles del evento.
+        </div>
+      `;
+      
+      // Agregar animación CSS
+      if (!document.getElementById('notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'notification-styles';
+        style.textContent = `
+          @keyframes slideIn {
+            from {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+            to {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+          @keyframes slideOut {
+            from {
+              transform: translateX(0);
+              opacity: 1;
+            }
+            to {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+          }
+        `;
+        document.head.appendChild(style);
       }
+      
+      document.body.appendChild(notification);
+      
+      // Eliminar después de 4 segundos con animación
+      setTimeout(() => {
+        notification.firstElementChild.style.animation = 'slideOut 0.3s ease-in';
+        setTimeout(() => {
+          notification.remove();
+        }, 300);
+      }, 4000);
     }
   </script>
 </body>
