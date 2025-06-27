@@ -98,3 +98,34 @@ document.addEventListener('DOMContentLoaded', function() {
   // PUNTO 1: foco al cargar el formulario
   document.getElementById('nombre').focus();
 });
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #2c2c2c;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.modal-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
