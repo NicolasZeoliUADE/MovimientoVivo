@@ -26,42 +26,27 @@
         </ul>
       </nav>
     </header>
-
     <main class="contenido">
       <div class="titulo-avances">
         <h2>Compra de Entradas</h2>
         <p>Seleccioná la cantidad de entradas generales que necesitás para participar de nuestros talleres y eventos.</p>
       </div>
-
       <!-- Calendario embebido -->
       <div class="card-avance">
         <h3>Calendario de Eventos</h3>
         <iframe src="https://calendar.google.com/calendar/embed?src=a8afee897e7a6840fbbe4df087f511c186453cd4fb908f7a71e52b6a1ea79fad%40group.calendar.google.com&ctz=America%2FArgentina%2FBuenos_Aires" style="border: 0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
       </div>
-
       <!-- Calculadora de entradas -->
       <div class="card-avance">
         <h3>Calculadora de Entradas</h3>
         <form id="form-tickets">
           <label for="entradas">Entradas generales ($15.000):</label>
           <input type="number" id="entradas" name="entradas" min="0" value="0">
-
           <p>Total a pagar: <strong id="total-pagar">$0</strong></p>
-
           <button type="submit" class="submit-button">Confirmar compra</button>
         </form>
       </div>
-      
-      <div id="purchaseModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">¡Gracias por tu compra!</div>
-        <div class="modal-body">
-            Recibirás un correo con los detalles del evento.
-        </div>
-        <button class="modal-button" onclick="closeModal()">Aceptar</button>
-    </div>
     </main>
-
     <footer>
       <p>Martin Moneta - Nicolas Zeoli - Sasha Ejarque - Milton Sosa - Emiliano Pascazi</p>
       <a href="https://martinmoneta.github.io/TPF_V2/index.html" target="_blank">Sitio grupal</a>
@@ -70,40 +55,49 @@
     </footer>
   </div>
 
+  <!-- MODAL - ESTO ES LO QUE TE FALTABA AGREGAR -->
+  <div id="purchaseModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">¡Gracias por tu compra!</div>
+      <div class="modal-body">
+        Recibirás un correo con los detalles del evento.
+      </div>
+      <button class="modal-button" onclick="closeModal()">Aceptar</button>
+    </div>
+  </div>
+
   <script src="styles/burger.js"></script>
   <script>
     const form = document.getElementById('form-tickets');
     const totalDisplay = document.getElementById('total-pagar');
-
+    
     form.addEventListener('input', () => {
       const entradas = parseInt(document.getElementById('entradas').value) || 0;
       const total = entradas * 15000;
       totalDisplay.textContent = `$${total}`;
     });
-
+    
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       showPurchaseModal();
       form.reset();
       totalDisplay.textContent = '$0';
     });
-
+    
     function showPurchaseModal() {
-    document.getElementById('purchaseModal').style.display = 'block';
+      document.getElementById('purchaseModal').style.display = 'block';
     }
-
+    
     function closeModal() {
-    document.getElementById('purchaseModal').style.display = 'none';
+      document.getElementById('purchaseModal').style.display = 'none';
     }
-
+    
     window.onclick = function(event) {
-    const modal = document.getElementById('purchaseModal');
-    if (event.target === modal) {
+      const modal = document.getElementById('purchaseModal');
+      if (event.target === modal) {
         modal.style.display = 'none';
-    }
+      }
     }
   </script>
-  
-</div>
 </body>
 </html>
