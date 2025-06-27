@@ -74,10 +74,34 @@
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('¡Gracias por tu compra! Recibirás un correo con los detalles del evento.');
+      showPurchaseModal();
       form.reset();
       totalDisplay.textContent = '$0';
     });
+
+    function showPurchaseModal() {
+    document.getElementById('purchaseModal').style.display = 'block';
+    }
+
+    function closeModal() {
+    document.getElementById('purchaseModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+    const modal = document.getElementById('purchaseModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+    }
   </script>
+  <div id="purchaseModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">¡Gracias por tu compra!</div>
+        <div class="modal-body">
+            Recibirás un correo con los detalles del evento.
+        </div>
+        <button class="modal-button" onclick="closeModal()">Aceptar</button>
+    </div>
+</div>
 </body>
 </html>
